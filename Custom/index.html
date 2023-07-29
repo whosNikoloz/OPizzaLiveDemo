@@ -23,19 +23,19 @@
     <input type="checkbox" id="active">
     <label for="active" class="menu-btn"><span></span></label>
 
-    <a href="/Home/index.html" class="link-class"><img id="logo" src="/root/images/Logo/logo.png"></a>
+    <a href="/home/index.html" class="link-class"><img id="logo" src="/root/images/Logo/logo.png"></a>
 
 
     <div class="wrapper">
         <label for="active" class="menu-btn"><span></span></label>
         <ul>
-            <li><a href="/Home/index.html">Home</a></li>
+            <li><a href="/home/index.html">Home</a></li>
             <li><a href="/Pizza/index.html">Pizzas</a></li>
                 <li>
                     <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Profile</a>
                 </li>
-                <li><a asp-area="" asp-controller="Admin" asp-action="Index">Admin</a></li>
-                    <li><a asp-area="" asp-controller="Admin" asp-action="Orders">Orders</a></li>
+                <li><a href="/admin/index.html">Admin</a></li>
+                <li><a href="/admin/orders.html">Orders</a></li>
         </ul>
        
         <div class="social-links">
@@ -136,7 +136,6 @@
             <source src="/root/video/CustomPizzaVID.mp4" type="video/mp4">
         </video>
     </div>
-    <form method="post" action="@Url.Action("Create", "Custom")">
         <div class="container">
             <h1 class="title">Toppings</h1>
             <div class="form-group">
@@ -216,10 +215,11 @@
             </div>
         </div>
 
-        <button type="submit">
-            შეკვეთა
-        </button>
-    </form>
+        <a href="/checkout/index.html">
+            <button type="submit">
+                შეკვეთა
+            </button>
+        </a>
     <br>
     <br>
     <br>

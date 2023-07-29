@@ -30,7 +30,7 @@
                     <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Profile</a>
                 </li>
                 <li><a href="/admin/index.html">Admin</a></li>
-            <li><a href="/admin/orders.html">Orders</a></li>
+                <li><a href="/admin/orders.html">Orders</a></li>
         </ul>
        
         <div class="social-links">
@@ -42,7 +42,7 @@
 
     </div>
         <div class="admin-panel">
-            <h2> Edit Pizza</h2>
+            <h2> Admin Edit</h2>
             <img src="/root/images/CustomPizza.png" class="pizza-image" style="width:400px;" />
     
             <input type="hidden" asp-for="Id" /> <!-- Hidden field for PizzaId, required for model binding -->
@@ -121,9 +121,9 @@
                 <label for="topping11" class="checkmark"></label>
                 <span class="checkbox-text">Jalapenos</span>
             </div>
-            <a href="/checkout/index.html">
-                <button class="add-pizza-button" value="Submit" style="background-color:yellow !important;color:black;">Next</button>
-            </a>
+    
+            <button class="add-pizza-button" value="Save" style="background-color:green !important;color:black;">Save</button>
+        <button class="add-pizza-button" asp-action="Delete" asp-controller="Admin" style="background-color:red !important;">Delete</button>
         </div>
     <br>
     <br>
