@@ -1,0 +1,25 @@
+body {
+    background-image: url(/images/bgsvg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    height: 50vh;
+    background-color: white;
+    border-radius: 10px;
+    width: 1000px;
+}
+
+h1, h2 {
+    color: black;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        height: 75vh;
+        width: 90%;
+    }
+}

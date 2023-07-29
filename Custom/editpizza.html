@@ -1,0 +1,190 @@
+
+<html lang="en" dir="ltr">
+<head>
+    
+    <link rel="stylesheet" href="/root/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/root/css/footer.css" asp-append-version="true" />
+    <script src="minified/gsap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+    <link rel="stylesheet" href="/root/css/adminadd.css" asp-append-version="true" />
+
+</head>
+<body>
+    <input type="checkbox" id="active">
+    <label for="active" class="menu-btn"><span></span></label>
+
+    <a href="/Home/index.html" class="link-class"><img id="logo" src="/root/images/Logo/logo.png"></a>
+
+
+    <div class="wrapper">
+        <label for="active" class="menu-btn"><span></span></label>
+        <ul>
+            <li><a href="/Home/index.html">Home</a></li>
+            <li><a href="/Pizza/index.html">Pizzas</a></li>
+                <li>
+                    <a asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Profile</a>
+                </li>
+                <li><a asp-area="" asp-controller="Admin" asp-action="Index">Admin</a></li>
+                    <li><a asp-area="" asp-controller="Admin" asp-action="Orders">Orders</a></li>
+        </ul>
+       
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100009152091053"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/nika16796240"><i class="fab fa-twitter"></i></a>
+            <a href="https://github.com/whosNikoloz"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/kobaidze0/"><i class="fab fa-instagram"></i></a>
+        </div>
+
+    </div>
+    <form method="post" action="@Url.Action("Create", "Custom")">
+        <div class="admin-panel">
+            <h2> Edit Pizza</h2>
+            <img src="/root/images/CustomPizza.png" class="pizza-image" style="width:400px;" />
+    
+            <input type="hidden" asp-for="Id" /> <!-- Hidden field for PizzaId, required for model binding -->
+            <input type="hidden" asp-for="Data" /> <!-- Hidden field for PizzaId, required for model binding -->
+            <input type="hidden" asp-for="Description" />
+            <div class="form-group">
+                <label for="cheese">Cheese:</label>
+                <select id="cheesetype" name="cheesetype" style="width: 200px;">
+                    <option value="none">არა</option>
+                    <option value="cheddar">Cheddar</option>
+                    <option value="mozzarella">Mozzarella</option>
+                    <option value="swiss">Swiss</option>
+                    <option value="gouda">Gouda</option>
+                    <option value="blue">Blue Cheese</option>
+                    <option value="parmesan">Parmesan</option>
+                    <option value="provolone">Provolone</option>
+                    <option value="burrata">Burrata</option>
+                    <option value="sulguni">sulguni</option>
+                </select>
+            </div>
+    
+    
+            <label>Toppings:</label>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" asp-for="TomatoSauce" id="topping1" class="checkbox">
+                <label for="topping1" class="checkmark"></label>
+                <span class="checkbox-text">TomatoSauce</span>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" asp-for="Ham" id="topping2" class="checkbox">
+                <label for="topping2" class="checkmark"></label>
+                <span class="checkbox-text">Ham</span>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" asp-for="Pepperoni" id="topping3" class="checkbox">
+                <label for="topping3" class="checkmark"></label>
+                <span class="checkbox-text">Pepperoni</span>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" asp-for="Mushrooms" id="topping4" class="checkbox">
+                <label for="topping4" class="checkmark"></label>
+                <span class="checkbox-text">Mushrooms</span>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" asp-for="Olives" id="topping5" class="checkbox">
+                <label for="topping5" class="checkmark"></label>
+                <span class="checkbox-text">Olives</span>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" asp-for="Bacon" id="topping6" class="checkbox">
+                <label for="topping6" class="checkmark"></label>
+                <span class="checkbox-text">Bacon</span>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" asp-for="Onions" id="topping7" class="checkbox">
+                <label for="topping7" class="checkmark"></label>
+                <span class="checkbox-text">Onions</span>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" asp-for="GreenPeppers" id="topping8" class="checkbox">
+                <label for="topping8" class="checkmark"></label>
+                <span class="checkbox-text">GreenPeppers</span>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" asp-for="Pineapple" id="topping9" class="checkbox">
+                <label for="topping9" class="checkmark"></label>
+                <span class="checkbox-text">Pineapple</span>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" asp-for="Anchovies" id="topping10" class="checkbox">
+                <label for="topping10" class="checkmark"></label>
+                <span class="checkbox-text">Anchovies</span>
+            </div>
+            <div class="checkbox-wrapper">
+                <input type="checkbox" asp-for="Jalapenos" id="topping11" class="checkbox">
+                <label for="topping11" class="checkmark"></label>
+                <span class="checkbox-text">Jalapenos</span>
+            </div>
+    
+            <button class="add-pizza-button" value="Submit" style="background-color:yellow !important;color:black;">Next</button>
+        </div>
+    </form>
+    <br>
+    <br>
+    <br>
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+
+            <IMG SRC="/root/images/Logo/LogoFooter.png" ALT="" WIDTH=150 HEIGHT=100>
+
+            <p class="footer-links">
+                <a href="@Url.Action("Home", "Index")">Home</a> ·
+                <a href="#">About</a> ·
+                <a href="#">Pricing</a> ·
+                <a href="#">Faq</a> ·
+                <a href="#">Contact</a> ·
+            </p>
+
+            <p class="footer-company-name">OPIZZA &copy; 2023</p>
+        </div>
+
+        <div class="footer-center">
+
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>Tbilis,Georgia</span> ღმერთების ქალაქი</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+955 577 602 399</p>
+            </div>
+
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:nika.kobaidze04@gmail.com">nika.kobaidze04@gmail.com</a></p>
+            </div>
+
+        </div>
+
+        <div class="footer-right">
+
+            <p class="footer-company-about">
+                <span>არწერა</span>
+                Georgia County Pizza is a local pizza company located in Georgia County, USA. They specialize in crafting delicious pizzas using fresh, locally sourced ingredients. With a diverse menu offering a variety of toppings and crust options, Georgia County Pizza is sure to satisfy every pizza lover's cravings. Their commitment to excellent customer service sets them apart, making them a favorite choice for residents and visitors alike in Georgia County.
+            </p>
+
+            <div class="footer-icons">
+
+                <a href="https://www.facebook.com/profile.php?id=100009152091053"><i class="fab fa-facebook"></i></a>
+                <a href="https://twitter.com/nika16796240"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/nikoloz-kobaidze-298a35254/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/whosNikoloz"><i class="fab fa-github"></i></a>
+
+            </div>
+
+        </div>
+
+    </footer>
+    
+    <script src="/root/js/custom.js"></script>
+</body>
+</html>
